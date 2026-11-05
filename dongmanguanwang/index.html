@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>动漫官网-动漫官网首页入口_新番追番与作品资料站</title>
+<meta name="description" content="动漫官网首页入口，集中呈现新番追番表、作品资料、角色介绍、观看指引与站内公告，为动漫爱好者提供清晰的浏览路径与内容入口。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23111a2e'/%3E%3Ccircle cx='32' cy='30' r='14' fill='%23ff7a9c'/%3E%3Ccircle cx='25' cy='27' r='2.6' fill='%23fff'/%3E%3Ccircle cx='39' cy='27' r='2.6' fill='%23fff'/%3E%3Cpath d='M24 36c4 4 12 4 16 0' stroke='%23fff' stroke-width='2.6' fill='none' stroke-linecap='round'/%3E%3Cpath d='M18 20l-6-5M46 20l6-5' stroke='%23ffd166' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
+<style>
+:root{
+  --ink:#131a2b;
+  --ink-soft:#3c4761;
+  --muted:#6b7488;
+  --paper:#f6f7fb;
+  --card:#ffffff;
+  --line:#e3e6ef;
+  --accent:#ff5b7f;
+  --accent-deep:#d63a60;
+  --accent-soft:#ffe9ef;
+  --blue:#3a5bd9;
+  --blue-soft:#e9edff;
+  --gold:#f2b544;
+  --radius:16px;
+  --shadow:0 10px 30px rgba(19,26,43,.07);
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",system-ui,sans-serif;
+  background:var(--paper);
+  color:var(--ink);
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none;}
+img,svg{display:block;max-width:100%;}
+.wrap{width:min(1140px,92vw);margin:0 auto;}
+h1,h2,h3{margin:0;line-height:1.35;letter-spacing:.2px;}
+p{margin:0;}
+ul{margin:0;padding:0;list-style:none;}
+
+/* 页头 */
+.site-header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(246,247,251,.92);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.header-inner{
+  display:flex;align-items:center;gap:28px;
+  min-height:68px;
+  flex-wrap:wrap;
+}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:19px;color:var(--ink);}
+.brand-mark{width:38px;height:38px;flex:0 0 auto;}
+.nav{display:flex;gap:22px;margin-left:auto;flex-wrap:wrap;}
+.nav a{
+  font-size:15px;color:var(--ink-soft);font-weight:600;padding:6px 2px;
+  border-bottom:2px solid transparent;transition:.2s;
+}
+.nav a:hover,.nav a:focus-visible{color:var(--accent-deep);border-bottom-color:var(--accent);}
+.header-cta{
+  font-size:14px;font-weight:700;color:#fff;background:var(--accent);
+  padding:9px 18px;border-radius:999px;transition:.2s;
+}
+.header-cta:hover{background:var(--accent-deep);}
+
+/* 首屏 */
+.hero{
+  position:relative;overflow:hidden;
+  background:
+    radial-gradient(900px 420px at 88% -10%,rgba(255,91,127,.20),transparent 70%),
+    radial-gradient(700px 380px at 4% 110%,rgba(58,91,217,.16),transparent 70%),
+    linear-gradient(180deg,#ffffff 0%,var(--paper) 100%);
+  border-bottom:1px solid var(--line);
+}
+.hero-inner{
+  display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;
+  padding:64px 0 68px;
+}
+.hero-tag{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--accent-soft);color:var(--accent-deep);
+  font-size:13px;font-weight:700;padding:6px 14px;border-radius:999px;
+  margin-bottom:18px;
+}
+.hero-tag::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--accent);}
+.hero h1{
+  font-size:clamp(30px,4.4vw,46px);
+  font-weight:800;letter-spacing:1px;
+}
+.hero h1 .hl{color:var(--accent-deep);}
+.hero-desc{
+  margin-top:18px;max-width:34em;color:var(--ink-soft);font-size:16px;
+}
+.hero-actions{display:flex;gap:14px;margin-top:26px;flex-wrap:wrap;}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:12px 24px;border-radius:999px;font-weight:700;font-size:15px;transition:.2s;
+}
+.btn-primary{background:var(--accent);color:#fff;box-shadow:0 8px 20px rgba(255,91,127,.28);}
+.btn-primary:hover{background:var(--accent-deep);}
+.btn-ghost{background:#fff;color:var(--ink);border:1px solid var(--line);}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent-deep);}
+.hero-stats{
+  display:flex;gap:30px;margin-top:34px;flex-wrap:wrap;
+  padding-top:22px;border-top:1px dashed var(--line);
+}
+.hero-stats b{display:block;font-size:22px;color:var(--ink);}
+.hero-stats span{font-size:13px;color:var(--muted);}
+.hero-art{position:relative;}
+.hero-art .frame{
+  border-radius:24px;overflow:hidden;box-shadow:var(--shadow);
+  border:1px solid #fff;background:#fff;
+}
+
+/* 通用区块 */
+.section{padding:64px 0;}
+.section-head{margin-bottom:32px;max-width:46em;}
+.section-head .kicker{
+  font-size:13px;font-weight:800;color:var(--accent-deep);letter-spacing:2px;
+  text-transform:uppercase;
+}
+.section-head h2{font-size:clamp(22px,2.8vw,30px);font-weight:800;margin-top:8px;}
+.section-head p{margin-top:10px;color:var(--muted);font-size:15px;}
+
+/* 新番 */
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+.card{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:24px;box-shadow:var(--shadow);transition:.22s;
+  display:flex;flex-direction:column;
+}
+.card:hover{transform:translateY(-4px);border-color:#cfd6e6;}
+.card .thumb{
+  border-radius:12px;overflow:hidden;margin:-6px -6px 16px;background:var(--blue-soft);
+}
+.card .meta{
+  display:flex;gap:10px;align-items:center;font-size:12px;color:var(--muted);
+  margin-bottom:10px;flex-wrap:wrap;
+}
+.pill{
+  display:inline-block;font-size:12px;font-weight:700;padding:2px 10px;border-radius:999px;
+  background:var(--accent-soft);color:var(--accent-deep);
+}
+.pill.blue{background:var(--blue-soft);color:var(--blue);}
+.pill.gold{background:#fdf1d8;color:#9a6a10;}
+.card h3{font-size:18px;font-weight:800;margin-bottom:8px;}
+.card p{font-size:14px;color:var(--ink-soft);flex:1;}
+.card .link{
+  margin-top:16px;font-size:14px;font-weight:700;color:var(--accent-deep);
+}
+.card .link::after{content:" →";}
+
+/* 追番表 */
+.schedule{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+  overflow:hidden;box-shadow:var(--shadow);
+}
+.schedule table{width:100%;border-collapse:collapse;font-size:14.5px;}
+.schedule th,.schedule td{padding:14px 18px;text-align:left;border-bottom:1px solid var(--line);}
+.schedule thead th{background:#fafbff;font-size:13px;color:var(--muted);font-weight:700;}
+.schedule tbody tr:last-child td{border-bottom:none;}
+.schedule tbody tr:hover{background:#fcfdff;}
+.schedule .day{font-weight:800;color:var(--blue);white-space:nowrap;}
+.schedule .note{color:var(--muted);font-size:13px;}
+
+/* 资料区 */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;}
+.feature-list li{
+  display:flex;gap:14px;padding:16px 0;border-bottom:1px dashed var(--line);
+}
+.feature-list li:last-child{border-bottom:none;}
+.feature-list .num{
+  flex:0 0 auto;width:34px;height:34px;border-radius:10px;
+  background:var(--blue-soft);color:var(--blue);font-weight:800;font-size:14px;
+  display:flex;align-items:center;justify-content:center;
+}
+.feature-list h3{font-size:16px;font-weight:800;margin-bottom:4px;}
+.feature-list p{font-size:14px;color:var(--ink-soft);}
+.side-note{
+  background:linear-gradient(160deg,#fff 0%,#fff6f8 100%);
+  border:1px solid #ffe0e8;border-radius:var(--radius);padding:28px;
+}
+.side-note h3{font-size:18px;font-weight:800;margin-bottom:12px;}
+.side-note p{font-size:14.5px;color:var(--ink-soft);margin-bottom:12px;}
+.side-note .minor{font-size:13px;color:var(--muted);}
+
+/* 观看指引 */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;counter-reset:step;}
+.step{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+  padding:26px 24px;box-shadow:var(--shadow);position:relative;
+}
+.step::before{
+  counter-increment:step;content:"0" counter(step);
+  font-size:14px;font-weight:800;color:var(--accent);
+  letter-spacing:1px;
+}
+.step h3{font-size:17px;font-weight:800;margin:10px 0 8px;}
+.step p{font-size:14px;color:var(--ink-soft);}
+
+/* 公告 */
+.notice{
+  background:var(--ink);color:#e9ecf5;border-radius:var(--radius);
+  padding:38px 40px;display:grid;grid-template-columns:1fr auto;gap:30px;align-items:center;
+  overflow:hidden;position:relative;
+}
+.notice::after{
+  content:"";position:absolute;right:-60px;top:-60px;width:220px;height:220px;
+  border-radius:50%;background:radial-gradient(circle,rgba(255,91,127,.35),transparent 70%);
+}
+.notice h2{font-size:22px;font-weight:800;color:#fff;}
+.notice p{font-size:14.5px;color:#b9c0d4;margin-top:10px;max-width:44em;}
+.notice .btn{position:relative;z-index:1;background:#fff;color:var(--ink);}
+.notice .btn:hover{background:var(--accent);color:#fff;}
+
+/* 下载 */
+.download-box{
+  display:flex;align-items:center;justify-content:space-between;gap:24px;
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+  padding:26px 30px;box-shadow:var(--shadow);flex-wrap:wrap;
+}
+.download-box h3{font-size:18px;font-weight:800;}
+.download-box p{font-size:14px;color:var(--muted);margin-top:4px;}
+.btn-disabled{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:11px 26px;border-radius:999px;font-weight:700;font-size:15px;
+  background:var(--accent-soft);color:var(--accent-deep);
+  pointer-events:none;opacity:.85;
+}
+
+/* 页尾 */
+.site-footer{
+  margin-top:20px;background:#0f1524;color:#a9b1c6;padding:46px 0 26px;font-size:14px;
+}
+.footer-top{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:36px;padding-bottom:30px;border-bottom:1px solid #232b40;}
+.footer-brand{display:flex;align-items:center;gap:10px;color:#fff;font-weight:800;font-size:18px;margin-bottom:12px;}
+.footer-brand svg{width:32px;height:32px;}
+.site-footer p{font-size:13.5px;line-height:1.8;color:#8b93a8;}
+.site-footer h4{font-size:14px;color:#fff;margin:0 0 12px;font-weight:700;}
+.site-footer li{margin-bottom:8px;}
+.site-footer li a{color:#8b93a8;transition:.2s;}
+.site-footer li a:hover{color:#fff;}
+.footer-bottom{
+  display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+  padding-top:20px;font-size:12.5px;color:#6d7488;
+}
+
+/* 移动端 */
+@media (max-width:900px){
+  .hero-inner{grid-template-columns:1fr;gap:34px;padding:44px 0 50px;}
+  .hero-art{max-width:460px;}
+  .grid-3,.steps{grid-template-columns:1fr 1fr;}
+  .split{grid-template-columns:1fr;gap:32px;}
+  .footer-top{grid-template-columns:1fr 1fr;}
+  .notice{grid-template-columns:1fr;padding:30px 26px;}
+}
+@media (max-width:640px){
+  .header-inner{gap:14px;padding:10px 0;}
+  .nav{gap:16px;margin-left:0;width:100%;order:3;font-size:14px;}
+  .header-cta{margin-left:auto;}
+  .grid-3,.steps{grid-template-columns:1fr;}
+  .section{padding:44px 0;}
+  .hero h1{font-size:30px;}
+  .schedule th,.schedule td{padding:12px 12px;font-size:13.5px;}
+  .schedule .note{display:none;}
+  .footer-top{grid-template-columns:1fr;}
+  .download-box{padding:22px;}
+}
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="#top" aria-label="动漫官网首页">
+      <svg class="brand-mark" viewBox="0 0 64 64" role="img" aria-hidden="true">
+        <rect width="64" height="64" rx="14" fill="#111a2e"/>
+        <circle cx="32" cy="31" r="14" fill="#ff7a9c"/>
+        <circle cx="26" cy="28" r="2.6" fill="#fff"/>
+        <circle cx="38" cy="28" r="2.6" fill="#fff"/>
+        <path d="M25 37c4 4 10 4 14 0" stroke="#fff" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+        <path d="M18 21l-6-5M46 21l6-5" stroke="#ffd166" stroke-width="3" stroke-linecap="round"/>
+      </svg>
+      <span>动漫官网</span>
+    </a>
+    <nav class="nav" aria-label="主导航">
+      <a href="#shinban">新番推荐</a>
+      <a href="#schedule">追番时间表</a>
+      <a href="#library">作品资料</a>
+      <a href="#guide">观看指引</a>
+      <a href="#notice">站内公告</a>
+    </nav>
+    <a class="header-cta" href="#shinban">开始追番</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- 首屏 -->
+  <section class="hero">
+    <div class="wrap hero-inner">
+      <div>
+        <span class="hero-tag">2024 秋冬季内容入口</span>
+        <h1>动漫官网</h1>
+        <p class="hero-desc">
+          这里是动漫官网的首页入口：把当季新番、往期作品资料、角色介绍与追番时间表整理在同一条浏览路径上。
+          无论你想找一部还没看过的番剧，还是想快速确认某个角色的出处，都可以从下方栏目直接进入对应内容。
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#shinban">浏览新番推荐</a>
+          <a class="btn btn-ghost" href="#schedule">查看追番时间表</a>
+        </div>
+        <div class="hero-stats">
+          <div><b>12</b><span>当季新番条目</span></div>
+          <div><b>7</b><span>每周更新日</span></div>
+          <div><b>4</b><span>资料分类维度</span></div>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="frame">
+          <svg viewBox="0 0 460 380" role="img" aria-label="动漫官网首页插画：放映荧幕与角色剪影">
+            <defs>
+              <linearGradient id="sky" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#1a2340"/>
+                <stop offset="100%" stop-color="#33406b"/>
+              </linearGradient>
+              <linearGradient id="glow" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#ff7a9c" stop-opacity=".9"/>
+                <stop offset="100%" stop-color="#ff7a9c" stop-opacity="0"/>
+              </linearGradient>
+            </defs>
+            <rect width="460" height="380" fill="url(#sky)"/>
+            <circle cx="352" cy="82" r="46" fill="#ffd166" opacity=".85"/>
+            <circle cx="352" cy="82" r="66" fill="#ffd166" opacity=".14"/>
+            <rect x="46" y="72" width="250" height="164" rx="14" fill="#0e1526" stroke="#4a5a8a" stroke-width="2"/>
+            <rect x="58" y="84" width="226" height="140" rx="8" fill="url(#glow)" opacity=".55"/>
+            <circle cx="112" cy="132" r="17" fill="#fff" opacity=".92"/>
+            <circle cx="200" cy="112" r="9" fill="#fff" opacity=".55"/>
+            <circle cx="248" cy="150" r="6" fill="#fff" opacity=".45"/>
+            <path d="M58 196c40-28 70 16 108-6s60 20 118-10v50H58z" fill="#ff7a9c" opacity=".55"/>
+            <path d="M46 72l-16-14M296 72l16-14" stroke="#ffd166" stroke-width="4" stroke-linecap="round"/>
+            <g fill="#f6f7fb">
+              <circle cx="130" cy="286" r="26"/>
+              <path d="M104 380c0-30 12-58 26-70 14 12 26 40 26 70z"/>
+            </g>
+            <g fill="#ff7a9c">
+              <circle cx="228" cy="302" r="22"/>
+              <path d="M206 380c0-26 10-50 22-60 12 10 22 34 22 60z"/>
+            </g>
+            <g fill="#7d8bc4">
+              <circle cx="316" cy="292" r="24"/>
+              <path d="M292 380c0-28 11-54 24-64 13 10 24 36 24 64z"/>
+            </g>
+            <path d="M40 380h380" stroke="#4a5a8a" stroke-width="2"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 新番推荐 -->
+  <section class="section" id="shinban">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">New Season</span>
+        <h2>当季新番推荐</h2>
+        <p>按题材分成三条线索，方便第一次访问动漫官网的读者快速判断从哪一部开始。</p>
+      </div>
+      <div class="grid-3">
+        <article class="card">
+          <div class="thumb">
+            <svg viewBox="0 0 360 180" role="img" aria-label="校园青春题材插画">
+              <rect width="360" height="180" fill="#e9edff"/>
+              <circle cx="290" cy="46" r="26" fill="#ffd166"/>
+              <path d="M0 150c50-38 110 20 180-10s110 22 180-14v54H0z" fill="#3a5bd9" opacity=".28"/>
+              <rect x="54" y="60" width="76" height="70" rx="6" fill="#fff"/>
+              <path d="M54 60l38-26 38 26" fill="#ff7a9c"/>
+              <rect x="84" y="96" width="18" height="34" rx="3" fill="#3a5bd9" opacity=".5"/>
+            </svg>
+          </div>
+          <div class="meta"><span class="pill">校园</span><span>周四更新</span></div>
+          <h3>青春社团物语</h3>
+          <p>围绕一支濒临解散的社团展开，叙事重心放在成员之间的磨合与成长，节奏平稳，适合喜欢日常群像的观众。</p>
+        </article>
+        <article class="card">
+          <div class="thumb">
+            <svg viewBox="0 0 360 180" role="img" aria-label="奇幻冒险题材插画">
+              <rect width="360" height="180" fill="#1d2542"/>
+              <circle cx="76" cy="52" r="22" fill="#ffd166" opacity=".8"/>
+              <path d="M0 152l70-58 52 40 62-64 78 82 50-40 48 40v28H0z" fill="#3a5bd9" opacity=".7"/>
+              <path d="M0 160l70-40 52 30 62-46 78 58 50-28 48 26v20H0z" fill="#7d8bc4" opacity=".6"/>
+              <circle cx="250" cy="46" r="4" fill="#fff"/><circle cx="292" cy="70" r="3" fill="#fff"/><circle cx="216" cy="30" r="2.5" fill="#fff"/>
+            </svg>
+          </div>
+          <div class="meta"><span class="pill blue">奇幻</span><span>周六更新</span></div>
+          <h3>远境纪行录</h3>
+          <p>以旅行者穿越边境城镇为线索，世界观设定通过沿途见闻逐步展开。前期信息量较大，建议从第一集顺序观看。</p>
+        </article>
+        <article class="card">
+          <div class="thumb">
+            <svg viewBox="0 0 360 180" role="img" aria-label="科幻推理题材插画">
+              <rect width="360" height="180" fill="#101a30"/>
+              <circle cx="180" cy="90" r="52" fill="none" stroke="#ff5b7f" stroke-width="2" opacity=".8"/>
+              <circle cx="180" cy="90" r="76" fill="none" stroke="#3a5bd9" stroke-width="1.5" stroke-dasharray="6 8" opacity=".9"/>
+              <circle cx="180" cy="90" r="18" fill="#ff5b7f" opacity=".85"/>
+              <circle cx="256" cy="90" r="6" fill="#ffd166"/>
+              <circle cx="104" cy="90" r="4" fill="#fff" opacity=".8"/>
+              <path d="M0 160h360" stroke="#4a5a8a" stroke-width="2"/>
+            </svg>
+          </div>
+          <div class="meta"><span class="pill gold">推理</span><span>周日更新</span></div>
+          <h3>记忆档案室</h3>
+          <p>单元式结构，每集处理一桩独立委托，主线藏在细节彩蛋里。适合碎片时间观看，也适合二刷核对线索。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 追番时间表 -->
+  <section class="section" id="schedule" style="padding-top:0;">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">Schedule</span>
+        <h2>每周追番时间表</h2>
+        <p>更新时间以站内公布为准，下方仅列出当季排期，便于安排观看顺序。</p>
+      </div>
+      <div class="schedule">
+        <table>
+          <thead>
+            <tr><th>更新日</th><th>作品</th><th>题材</th><th>备注</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="day">周一</td><td>记忆档案室</td><td>推理</td><td class="note">单元剧，可单独观看</td></tr>
+            <tr><td class="day">周三</td><td>远境纪行录</td><td>奇幻</td><td class="note">建议顺序观看</td></tr>
+            <tr><td class="day">周四</td><td>青春社团物语</td><td>校园</td><td class="note">群像日常</td></tr>
+            <tr><td class="day">周六</td><td>远境纪行录（加更）</td><td>奇幻</td><td class="note">视排期调整</td></tr>
+            <tr><td class="day">周日</td><td>记忆档案室（重播）</td><td>推理</td><td class="note">补番窗口</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- 作品资料 -->
+  <section class="section" id="library">
+    <div class="wrap split">
+      <div>
+        <div class="section-head">
+          <span class="kicker">Library</span>
+          <h2>作品资料怎么查</h2>
+          <p>资料区按作品、角色、制作与播出四条线组织，检索时先确定你要找的是作品还是角色。</p>
+        </div>
+        <ul class="feature-list">
+          <li>
+            <span class="num">01</span>
+            <div>
+              <h3>作品条目</h3>
+              <p>收录标题、别名、播出年份与集数区间，方便在动漫官网内比对同名或译名不同的作品。</p>
+            </div>
+          </li>
+          <li>
+            <span class="num">02</span>
+            <div>
+              <h3>角色介绍</h3>
+              <p>按作品归属整理角色条目，标注出场范围与关键关系，避免在跨作品检索时被同名角色干扰。</p>
+            </div>
+          </li>
+          <li>
+            <span class="num">03</span>
+            <div>
+              <h3>制作信息</h3>
+              <p>列出制作公司、主要staff与音乐担当，适合想顺着制作阵容找下一部作品的观众。</p>
+            </div>
+          </li>
+          <li>
+            <span class="num">04</span>
+            <div>
+              <h3>播出记录</h3>
+              <p>记录首播时间与重播窗口，追番表与资料页互相对应，更新时间以站内公布为准。</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <aside class="side-note">
+        <h3>资料使用提示</h3>
+        <p>资料条目以公开播出信息为基础整理，同一作品的不同译名会合并到同一条目下，并在别名栏注明。</p>
+        <p>若发现条目与官方信息不一致，以官方公告为准；站内记录会在核对后更新。</p>
+        <p class="minor">动漫官网的资料区仍在持续补全，部分早期作品的角色条目尚未完成，欢迎在公告区反馈缺失项。</p>
+        <a class="btn btn-ghost" href="#notice" style="margin-top:14px;">查看更新说明</a>
+      </aside>
+    </div>
+  </section>
+
+  <!-- 观看指引 -->
+  <section class="section" id="guide" style="padding-top:0;">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">Guide</span>
+        <h2>三步找到想看的番</h2>
+        <p>把浏览顺序固定下来，能减少在多个页面之间来回跳转的时间。</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <h3>确定题材偏好</h3>
+          <p>先在新番推荐里按校园、奇幻、推理三类筛选，缩小候选范围，再进入具体作品条目。</p>
+        </div>
+        <div class="step">
+          <h3>核对更新时间</h3>
+          <p>在追番时间表确认该作品的更新日，避免重复等待已播出的集数，也方便安排补番顺序。</p>
+        </div>
+        <div class="step">
+          <h3>补齐背景资料</h3>
+          <p>进入作品资料页查看角色与制作信息，理解设定后再观看，能明显降低前期信息负担。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 公告 -->
+  <section class="section" id="notice" style="padding-top:0;">
+    <div class="wrap">
+      <div class="notice">
+        <div>
+          <h2>站内公告与更新说明</h2>
+          <p>本季排期与作品条目已同步至追番表；角色资料仍在补全中，部分早期作品条目预计在后续批次更新。资料如与官方公告存在差异，以官方信息为准。</p>
+        </div>
+        <a class="btn" href="#schedule">查看排期</a>
+      </div>
+
+      <div class="download-box" style="margin-top:26px;">
+        <div>
+          <h3>追番清单（离线版）</h3>
+          <p>包含当季新番与每周更新日，便于在无网络时核对排期。</p>
+        </div>
+        <a class="btn-disabled" href="#" data-download-placeholder="true" aria-disabled="true" tabindex="-1">下载</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand">
+          <svg viewBox="0 0 64 64" aria-hidden="true">
+            <rect width="64" height="64" rx="14" fill="#1d2542"/>
+            <circle cx="32" cy="31" r="14" fill="#ff7a9c"/>
+            <circle cx="26" cy="28" r="2.6" fill="#fff"/>
+            <circle cx="38" cy="28" r="2.6" fill="#fff"/>
+            <path d="M25 37c4 4 10 4 14 0" stroke="#fff" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+          </svg>
+          <span>动漫官网</span>
+        </div>
+        <p>动漫官网面向动漫爱好者，集中整理当季新番、追番时间表与作品资料，帮助访问者用更短的时间找到想看的内容。</p>
+      </div>
+      <div>
+        <h4>内容栏目</h4>
+        <ul>
+          <li><a href="#shinban">新番推荐</a></li>
+          <li><a href="#schedule">追番时间表</a></li>
+          <li><a href="#library">作品资料</a></li>
+          <li><a href="#guide">观看指引</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>使用说明</h4>
+        <ul>
+          <li><a href="#notice">站内公告</a></li>
+          <li><a href="#notice">资料更新说明</a></li>
+          <li><a href="#top">返回顶部</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>动漫官网 · 内容整理与浏览入口</span>
+      <span>资料以公开播出信息为基础，具体以官方公告为准</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+                </html>
