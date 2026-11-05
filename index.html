@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日大乱斗yandex吃瓜-每日大乱斗热门对局_吃瓜看点与Yandex搜索入口</title>
+<meta name="description" content="每日大乱斗yandex吃瓜主题首页：汇总每日大乱斗热门对局与吃瓜看点，整理玩家关心的搜索入口、观战要点和常见问题，帮助访客快速找到当日重点内容。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23111827'/%3E%3Ccircle cx='24' cy='26' r='9' fill='%23f97316'/%3E%3Ccircle cx='42' cy='38' r='11' fill='%23facc15'/%3E%3Cpath d='M12 52h40' stroke='%23e5e7eb' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E">
+<style>
+  :root{
+    --ink:#151a24;
+    --ink-2:#3b4453;
+    --muted:#6b7484;
+    --line:#e3e7ee;
+    --bg:#f6f5f1;
+    --card:#ffffff;
+    --brand:#f97316;
+    --brand-2:#facc15;
+    --deep:#1b2230;
+    --ok:#2f7d5b;
+    --radius:16px;
+  }
+  *{box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    margin:0;
+    font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,"Segoe UI",sans-serif;
+    color:var(--ink);
+    background:var(--bg);
+    line-height:1.75;
+    font-size:16px;
+  }
+  a{color:inherit;text-decoration:none;}
+  img,svg{display:block;max-width:100%;}
+  .wrap{width:min(1140px,92vw);margin:0 auto;}
+  header.site{
+    position:sticky;top:0;z-index:40;
+    background:rgba(246,245,241,.92);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .bar{display:flex;align-items:center;gap:18px;min-height:66px;}
+  .logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:16px;letter-spacing:.2px;}
+  .logo .mark{width:34px;height:34px;flex:0 0 auto;}
+  .logo span.brand-text{white-space:nowrap;}
+  nav.top{margin-left:auto;display:flex;gap:4px;flex-wrap:wrap;}
+  nav.top a{
+    padding:8px 12px;border-radius:999px;font-size:14px;color:var(--ink-2);font-weight:600;
+  }
+  nav.top a:hover{background:#fff;color:var(--ink);box-shadow:0 1px 0 var(--line);}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:11px 20px;border-radius:999px;font-weight:700;font-size:14px;
+    background:var(--deep);color:#fff;border:1px solid var(--deep);
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .btn:hover{transform:translateY(-1px);box-shadow:0 8px 20px rgba(27,34,48,.18);}
+  .btn.ghost{background:#fff;color:var(--deep);border-color:var(--line);}
+  .btn.warn{background:var(--brand);border-color:var(--brand);color:#1b1206;}
+  .btn[aria-disabled="true"]{cursor:default;opacity:.9;}
+  .hero{
+    position:relative;overflow:hidden;
+    background:
+      radial-gradient(900px 320px at 88% -10%, rgba(250,204,21,.35), transparent 60%),
+      radial-gradient(700px 300px at 6% 0%, rgba(249,115,22,.22), transparent 60%),
+      linear-gradient(180deg,#fbfaf7 0%,#f6f5f1 100%);
+    border-bottom:1px solid var(--line);
+  }
+  .hero-grid{
+    display:grid;grid-template-columns:1.25fr .75fr;gap:36px;align-items:center;
+    padding:52px 0 44px;
+  }
+  .kicker{
+    display:inline-flex;align-items:center;gap:8px;
+    font-size:12.5px;font-weight:700;letter-spacing:.6px;color:var(--brand);
+    background:#fff;border:1px solid #f6d9bd;border-radius:999px;padding:5px 12px;
+  }
+  h1{
+    font-size:clamp(26px,4.1vw,44px);
+    line-height:1.22;margin:16px 0 12px;letter-spacing:-.5px;font-weight:900;
+  }
+  .lede{color:var(--ink-2);font-size:16px;max-width:56ch;margin:0 0 22px;}
+  .hero-actions{display:flex;gap:12px;flex-wrap:wrap;align-items:center;}
+  .meta-row{display:flex;gap:20px;flex-wrap:wrap;margin-top:22px;font-size:13px;color:var(--muted);}
+  .meta-row b{color:var(--ink);font-size:15px;display:block;line-height:1.4;}
+  .hero-art{
+    background:#fff;border:1px solid var(--line);border-radius:22px;padding:16px;
+    box-shadow:0 18px 44px -22px rgba(27,34,48,.35);
+  }
+  .hero-art .cap{font-size:12.5px;color:var(--muted);margin-top:10px;text-align:center;}
+  section{padding:46px 0;}
+  .sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:22px;}
+  .sec-head h2{font-size:clamp(20px,2.6vw,26px);margin:0;letter-spacing:-.2px;}
+  .sec-head p{margin:6px 0 0;color:var(--muted);font-size:14px;}
+  .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+  .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+  .card{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:20px 20px 18px;
+  }
+  .card h3{margin:0 0 8px;font-size:17px;}
+  .card p{margin:0;color:var(--ink-2);font-size:14.5px;}
+  .tag{
+    display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:.4px;
+    color:#7a3b06;background:#fff2e2;border-radius:6px;padding:3px 8px;margin-bottom:10px;
+  }
+  .tag.g{color:#155e46;background:#e6f5ee;}
+  .tag.b{color:#1e3a63;background:#e8eefb;}
+  .list{list-style:none;padding:0;margin:0;}
+  .list li{
+    display:flex;gap:14px;padding:15px 0;border-bottom:1px dashed var(--line);font-size:14.5px;color:var(--ink-2);
+  }
+  .list li:last-child{border-bottom:0;padding-bottom:0;}
+  .list .num{
+    flex:0 0 28px;height:28px;border-radius:8px;background:var(--deep);color:#fff;
+    font-size:13px;font-weight:700;display:grid;place-items:center;
+  }
+  .list b{color:var(--ink);}
+  .prose{max-width:70ch;}
+  .prose p{margin:0 0 14px;color:var(--ink-2);font-size:15px;}
+  .prose p:last-child{margin-bottom:0;}
+  .tips{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:22px;}
+  .tips h3{margin:0 0 12px;font-size:17px;}
+  .faq details{
+    background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin-bottom:10px;
+  }
+  .faq summary{cursor:pointer;font-weight:700;font-size:15px;list-style:none;}
+  .faq summary::-webkit-details-marker{display:none;}
+  .faq summary::before{content:"＋";color:var(--brand);font-weight:800;margin-right:8px;}
+  .faq details[open] summary::before{content:"－";}
+  .faq p{margin:10px 0 0;color:var(--ink-2);font-size:14.5px;}
+  .searchbox{
+    display:flex;gap:10px;background:#fff;border:1px solid var(--line);border-radius:999px;
+    padding:6px 6px 6px 18px;align-items:center;max-width:520px;
+  }
+  .searchbox input{
+    flex:1;border:0;outline:none;background:transparent;font-size:15px;color:var(--ink);
+    font-family:inherit;min-width:0;padding:8px 0;
+  }
+  .searchbox button{
+    border:0;border-radius:999px;background:var(--brand);color:#1b1206;font-weight:800;
+    padding:10px 18px;font-size:14px;cursor:pointer;font-family:inherit;
+  }
+  .chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px;}
+  .chips a{
+    font-size:13px;color:var(--ink-2);background:#fff;border:1px solid var(--line);
+    border-radius:999px;padding:5px 12px;
+  }
+  .chips a:hover{border-color:var(--brand);color:var(--brand);}
+  .result{margin-top:12px;font-size:14px;color:var(--ok);min-height:22px;}
+  .banner{
+    background:linear-gradient(120deg,#1b2230,#2b3446 60%,#3a2a1a);
+    color:#fff;border-radius:22px;padding:34px 30px;
+    display:flex;gap:24px;align-items:center;justify-content:space-between;flex-wrap:wrap;
+  }
+  .banner h2{margin:0 0 8px;font-size:clamp(20px,2.6vw,26px);}
+  .banner p{margin:0;color:#c8cfdb;font-size:14.5px;max-width:56ch;}
+  footer.site{border-top:1px solid var(--line);background:#fff;padding:32px 0;}
+  .foot{display:flex;gap:24px;justify-content:space-between;flex-wrap:wrap;align-items:flex-start;}
+  .foot .brandline{font-weight:800;font-size:14.5px;margin-bottom:6px;}
+  .foot small{color:var(--muted);font-size:12.5px;line-height:1.8;display:block;}
+  .foot nav{display:flex;gap:18px;flex-wrap:wrap;font-size:13.5px;color:var(--ink-2);}
+  .foot nav a:hover{color:var(--brand);}
+  @media (max-width:900px){
+    .hero-grid{grid-template-columns:1fr;padding:36px 0 34px;}
+    .hero-art{order:2;}
+    .grid-3,.grid-2{grid-template-columns:1fr;}
+    nav.top{display:none;}
+    .bar{min-height:60px;}
+    .logo{font-size:14px;}
+    section{padding:36px 0;}
+    .banner{padding:26px 20px;}
+  }
+  @media (max-width:520px){
+    .logo span.brand-text{white-space:normal;line-height:1.35;}
+    .meta-row{gap:14px;}
+  }
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap bar">
+    <a class="logo" href="#top" aria-label="每日大乱斗yandex吃瓜 首页">
+      <svg class="mark" viewBox="0 0 64 64" role="img" aria-hidden="true">
+        <rect width="64" height="64" rx="14" fill="#1b2230"/>
+        <circle cx="23" cy="25" r="9" fill="#f97316"/>
+        <circle cx="42" cy="38" r="11" fill="#facc15"/>
+        <path d="M12 53h40" stroke="#e5e7eb" stroke-width="4" stroke-linecap="round"/>
+      </svg>
+      <span class="brand-text">每日大乱斗yandex吃瓜</span>
+    </a>
+    <nav class="top" aria-label="主导航">
+      <a href="#today">今日看点</a>
+      <a href="#search">搜索入口</a>
+      <a href="#guide">观战指南</a>
+      <a href="#faq">常见问题</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <div class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="kicker">● 每日更新 · 对局与话题整理</span>
+        <h1>每日大乱斗yandex吃瓜</h1>
+        <p class="lede">这里把每日大乱斗的热门对局、玩家讨论与搜索入口放在同一页：先看今日值得关注的看点，再用关键词到 Yandex 检索更完整的原始讨论，减少在多个页面之间来回跳转。</p>
+        <div class="hero-actions">
+          <a class="btn warn" href="#today">查看今日看点</a>
+          <a class="btn ghost" href="#search">前往搜索入口</a>
+          <a class="btn ghost" href="#" data-download-placeholder="true" aria-disabled="true" tabindex="-1">下载</a>
+        </div>
+        <div class="meta-row">
+          <div><b>每日</b>看点整理节奏</div>
+          <div><b>3 类</b>内容分区</div>
+          <div><b>Yandex</b>外部检索</div>
+        </div>
+      </div>
+      <div class="hero-art">
+        <svg viewBox="0 0 420 280" role="img" aria-label="大乱斗对局与吃瓜话题的示意图">
+          <rect width="420" height="280" rx="18" fill="#fbfaf7"/>
+          <rect x="18" y="18" width="384" height="34" rx="10" fill="#1b2230"/>
+          <circle cx="36" cy="35" r="6" fill="#f97316"/>
+          <circle cx="54" cy="35" r="6" fill="#facc15"/>
+          <circle cx="72" cy="35" r="6" fill="#e5e7eb"/>
+          <rect x="18" y="66" width="230" height="14" rx="7" fill="#e3e7ee"/>
+          <rect x="18" y="90" width="170" height="14" rx="7" fill="#eef1f5"/>
+          <rect x="18" y="128" width="184" height="130" rx="12" fill="#fff" stroke="#e3e7ee"/>
+          <circle cx="64" cy="168" r="18" fill="#f97316" opacity=".9"/>
+          <circle cx="104" cy="190" r="22" fill="#facc15" opacity=".9"/>
+          <rect x="40" y="226" width="120" height="10" rx="5" fill="#e3e7ee"/>
+          <rect x="216" y="128" width="186" height="60" rx="12" fill="#fff" stroke="#e3e7ee"/>
+          <rect x="234" y="146" width="110" height="10" rx="5" fill="#e3e7ee"/>
+          <rect x="234" y="164" width="70" height="8" rx="4" fill="#eef1f5"/>
+          <rect x="216" y="198" width="186" height="60" rx="12" fill="#fff" stroke="#e3e7ee"/>
+          <rect x="234" y="216" width="130" height="10" rx="5" fill="#e3e7ee"/>
+          <rect x="234" y="234" width="90" height="8" rx="4" fill="#eef1f5"/>
+        </svg>
+        <div class="cap">对局记录、讨论热度与检索路径，一页看清</div>
+      </div>
+    </div>
+  </div>
+
+  <section id="today">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <h2>今日看点：先看什么，再看什么</h2>
+          <p>每日大乱斗yandex吃瓜的阅读顺序，按信息密度从高到低排列。</p>
+        </div>
+      </div>
+      <div class="grid-3">
+        <article class="card">
+          <span class="tag">01 · 对局</span>
+          <h3>热门对局先过一遍</h3>
+          <p>优先看当天讨论集中的对局：谁在打、局面怎么走、结果是否有争议。这类内容信息量最大，也是后续吃瓜话题的起点。</p>
+        </article>
+        <article class="card">
+          <span class="tag g">02 · 讨论</span>
+          <h3>再看玩家怎么说</h3>
+          <p>同一场对局，不同玩家的解读往往不一致。把支持与质疑两种说法对照着看，比只看单条结论更容易判断事情原貌。</p>
+        </article>
+        <article class="card">
+          <span class="tag b">03 · 检索</span>
+          <h3>最后回到原始出处</h3>
+          <p>整理页只做线索汇总。想确认细节，用关键词到 Yandex 检索原始帖与视频，能补上被摘要省略的上下文。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="search" style="padding-top:0;">
+    <div class="wrap">
+      <div class="grid-2">
+        <div class="tips">
+          <h3>搜索入口：按关键词找原始讨论</h3>
+          <p style="margin:0 0 14px;color:var(--ink-2);font-size:14.5px;">输入对局名、玩家名或话题词，页面会给出检索建议，再跳到 Yandex 查看完整结果。每日大乱斗yandex吃瓜的关键词越具体，返回的内容越接近你想要的原始讨论。</p>
+          <form class="searchbox" id="findForm" role="search" aria-label="关键词检索建议">
+            <input id="q" type="search" placeholder="例如：对局名 / 玩家名 / 争议点" aria-label="输入检索关键词">
+            <button type="submit">生成检索</button>
+          </form>
+          <div class="result" id="result" role="status" aria-live="polite"></div>
+          <div class="chips">
+            <a href="#today">对局复盘</a>
+            <a href="#guide">观战要点</a>
+            <a href="#faq">常见问题</a>
+            <a href="#top">回到顶部</a>
+          </div>
+        </div>
+        <div class="card">
+          <h3>为什么建议用 Yandex 检索</h3>
+          <p style="margin-bottom:12px;">不少大乱斗相关的讨论、剪辑与转述首先出现在外部平台，站内整理只能覆盖其中一部分。Yandex 对多语言内容的抓取范围较广，适合用来查找原帖、旧贴与被转载的版本。</p>
+          <ul class="list">
+            <li><span class="num">1</span><span>用<b>完整对局描述</b>检索，比只用两三个字更容易命中原文。</span></li>
+            <li><span class="num">2</span><span>加上<b>日期或赛季</b>限定，能过滤掉大量旧内容。</span></li>
+            <li><span class="num">3</span><span>看到结论先找<b>原始发布者</b>，再判断转述是否走样。</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="guide" style="padding-top:0;">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <h2>观战指南：吃瓜也要看得明白</h2>
+          <p>把热闹看懂的四个习惯，适用于大多数每日大乱斗话题。</p>
+        </div>
+      </div>
+      <div class="grid-2">
+        <div class="prose">
+          <p>第一，先分清<b>事实与评价</b>。比分、时间、参战名单属于可核对的事实；谁更强、谁该背锅则是评价。每日大乱斗yandex吃瓜时如果把两者混在一起，很容易被情绪带着走。</p>
+          <p>第二，注意<b>版本与规则差异</b>。同一套打法在不同版本里的效果可能完全不同，跨版本比较往往得不出可靠结论。看到旧素材时，先确认它对应的时间点。</p>
+          <p>第三，留意<b>剪辑的取舍</b>。短视频会把几十分钟的对局压缩成几十秒，精彩片段之外的铺垫常常被剪掉。想判断一次操作是否合理，最好找到完整回放。</p>
+          <p>第四，保留<b>自己的判断</b>。整理页和检索结果都只是材料，结论需要自己核对。每日大乱斗yandex吃瓜的价值在于快速定位线索，而不是替读者下结论。</p>
+        </div>
+        <div class="card">
+          <h3>内容分区一览</h3>
+          <ul class="list">
+            <li><span class="num">A</span><span><b>今日看点</b>：当天讨论集中的对局与话题，按信息密度排序。</span></li>
+            <li><span class="num">B</span><span><b>搜索入口</b>：关键词建议与外部检索路径，用于核对原始出处。</span></li>
+            <li><span class="num">C</span><span><b>观战指南</b>：帮助新访客快速理解话题背景的常识与方法。</span></li>
+            <li><span class="num">D</span><span><b>常见问题</b>：更新节奏、内容范围与检索方式的集中说明。</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-top:0;">
+    <div class="wrap">
+      <div class="banner">
+        <div>
+          <h2>把每日大乱斗yandex吃瓜当成一个入口</h2>
+          <p>不追求覆盖全部内容，只把当天值得看的部分挑出来，并给出回到原始讨论的路径。习惯之后，你可以跳过整理页，直接按自己的关键词检索。</p>
+        </div>
+        <a class="btn warn" href="#search">开始检索</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" style="padding-top:0;">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <h2>常见问题</h2>
+          <p>关于每日大乱斗yandex吃瓜，访客最常问的几件事。</p>
+        </div>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>这个页面多久更新一次？</summary>
+          <p>按每日节奏整理，重点是把当天讨论集中的对局与话题挑出来，而不是逐条搬运所有内容。遇到信息不足的日子，页面会保持精简，不强行填充。</p>
+        </details>
+        <details>
+          <summary>为什么要把关键词和 Yandex 放在一起？</summary>
+          <p>因为站内整理只能提供线索摘要，完整讨论常常分散在外部平台。用具体关键词到 Yandex 检索，能更快找到原始帖、完整回放与不同立场的转述。</p>
+        </details>
+        <details>
+          <summary>页面里的下载按钮现在能用吗？</summary>
+          <p>当前版本尚未开放下载，按钮处于禁用状态，仅作占位。后续提供真实文件地址后会正常启用，届时无需改变页面其他部分。</p>
+        </details>
+        <details>
+          <summary>内容里的结论可以直接引用吗？</summary>
+          <p>不建议。整理页呈现的是线索与阅读方法，具体事实以原始发布内容为准。涉及时间、比分、名单等细节时，请回到出处核对后再使用。</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap foot">
+    <div>
+      <div class="brandline">每日大乱斗yandex吃瓜</div>
+      <small>主题首页 · 每日对局与话题线索整理</small>
+      <small>内容以公开讨论为线索，具体事实请核对原始出处。</small>
+    </div>
+    <nav aria-label="页尾导航">
+      <a href="#today">今日看点</a>
+      <a href="#search">搜索入口</a>
+      <a href="#guide">观战指南</a>
+      <a href="#faq">常见问题</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var form = document.getElementById('findForm');
+    var input = document.getElementById('q');
+    var out = document.getElementById('result');
+    if(!form) return;
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      var v = (input.value || '').trim();
+      if(!v){
+        out.textContent = '请先输入对局名、玩家名或话题词。';
+        return;
+      }
+      out.textContent = '建议检索词：「' + v + ' 大乱斗 复盘」或「' + v + ' 大乱斗 讨论」，可再加上日期限定范围。';
+    });
+  })();
+</script>
+</body>
+</html>
