@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日大赛黑料入口-黑料入口导航_每日大赛黑料合集与往期赛果索引</title>
+<meta name="description" content="每日大赛黑料入口页面，汇总每日大赛黑料入口的导航结构、栏目说明与使用方式，整理往期赛果索引与内容分类，帮助访问者快速找到每日大赛黑料入口的对应板块。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2314191f'/%3E%3Cpath d='M16 22h32M16 32h20M16 42h26' stroke='%23f2c94c' stroke-width='5' stroke-linecap='round'/%3E%3C/svg%3E">
+<style>
+:root{
+  --bg:#0f1419;
+  --bg-soft:#151c24;
+  --card:#1a222c;
+  --line:#2a3440;
+  --text:#e8edf2;
+  --muted:#9aa8b6;
+  --gold:#f2c94c;
+  --gold-soft:rgba(242,201,76,.12);
+  --radius:14px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",system-ui,sans-serif;
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(1120px,92vw);margin:0 auto}
+.skip{position:absolute;left:-9999px}
+.skip:focus{left:12px;top:12px;background:var(--gold);color:#111;padding:8px 14px;border-radius:8px;z-index:99}
+
+/* Header */
+header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(15,20,25,.92);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:14px 0;flex-wrap:wrap}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:17px;letter-spacing:.5px}
+.logo svg{flex:0 0 auto}
+.logo span{color:var(--text)}
+.logo .dot{color:var(--gold)}
+nav ul{display:flex;gap:8px;list-style:none;flex-wrap:wrap}
+nav a{
+  display:block;padding:7px 13px;border-radius:999px;
+  font-size:14px;color:var(--muted);border:1px solid transparent;
+  transition:.2s;
+}
+nav a:hover,nav a:focus-visible{color:var(--gold);border-color:var(--line);background:var(--bg-soft);outline:none}
+
+/* Hero */
+.hero{
+  position:relative;
+  padding:64px 0 56px;
+  border-bottom:1px solid var(--line);
+  overflow:hidden;
+  background:
+    radial-gradient(900px 380px at 82% -10%,rgba(242,201,76,.14),transparent 65%),
+    radial-gradient(700px 320px at 0% 110%,rgba(242,201,76,.07),transparent 60%);
+}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:44px;align-items:center}
+.kicker{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:13px;color:var(--gold);letter-spacing:2px;
+  border:1px solid rgba(242,201,76,.35);border-radius:999px;
+  padding:5px 14px;background:var(--gold-soft);margin-bottom:20px;
+}
+h1{
+  font-size:clamp(30px,4.4vw,46px);
+  line-height:1.25;font-weight:800;letter-spacing:1px;
+  margin-bottom:18px;
+}
+h1 em{font-style:normal;color:var(--gold)}
+.lead{color:var(--muted);font-size:16px;max-width:44em;margin-bottom:26px}
+.cta-row{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.btn{
+  display:inline-flex;align-items:center;gap:9px;
+  padding:12px 24px;border-radius:10px;font-size:15px;font-weight:700;
+  border:1px solid transparent;transition:.2s;cursor:pointer;
+}
+.btn-primary{background:var(--gold);color:#151200}
+.btn-primary:hover{filter:brightness(1.08)}
+.btn-ghost{border-color:var(--line);color:var(--text);background:var(--bg-soft)}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
+.btn[aria-disabled="true"]{opacity:.6;cursor:not-allowed;pointer-events:none}
+.hero-stats{display:flex;gap:26px;margin-top:30px;flex-wrap:wrap}
+.stat b{display:block;font-size:22px;color:var(--gold);font-weight:800}
+.stat span{font-size:13px;color:var(--muted)}
+
+/* Hero visual */
+.hero-art{
+  border:1px solid var(--line);border-radius:18px;
+  background:linear-gradient(160deg,var(--card),var(--bg-soft));
+  padding:22px;position:relative;overflow:hidden;
+}
+.hero-art::after{
+  content:"";position:absolute;inset:auto -30% -40% auto;width:220px;height:220px;
+  border-radius:50%;background:radial-gradient(circle,rgba(242,201,76,.22),transparent 70%);
+}
+.art-row{display:flex;justify-content:space-between;align-items:center;font-size:13px;color:var(--muted);margin-bottom:14px}
+.art-row .live{color:#7ee787;display:inline-flex;align-items:center;gap:6px}
+.art-row .live i{width:7px;height:7px;border-radius:50%;background:#7ee787;display:inline-block}
+.bar{height:9px;border-radius:6px;background:var(--line);margin:11px 0;overflow:hidden}
+.bar i{display:block;height:100%;border-radius:6px;background:linear-gradient(90deg,var(--gold),#d9a92f)}
+.art-list{list-style:none;margin-top:18px;display:grid;gap:10px}
+.art-list li{
+  display:flex;justify-content:space-between;gap:10px;
+  font-size:13px;color:var(--muted);
+  padding:9px 12px;border:1px solid var(--line);border-radius:9px;background:rgba(255,255,255,.02);
+}
+.art-list li b{color:var(--text);font-weight:600}
+
+/* Sections */
+section{padding:56px 0}
+.sec-head{max-width:46em;margin-bottom:30px}
+.sec-head h2{font-size:clamp(21px,2.6vw,27px);font-weight:800;margin-bottom:10px;letter-spacing:.5px}
+.sec-head h2 .num{color:var(--gold);font-size:15px;vertical-align:middle;margin-right:8px;letter-spacing:2px}
+.sec-head p{color:var(--muted);font-size:15px}
+
+.entry-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.entry{
+  border:1px solid var(--line);border-radius:var(--radius);
+  background:var(--card);padding:22px;display:flex;flex-direction:column;gap:10px;
+  transition:.22s;
+}
+.entry:hover{transform:translateY(-3px);border-color:rgba(242,201,76,.5)}
+.entry .ico{
+  width:40px;height:40px;border-radius:10px;display:grid;place-items:center;
+  background:var(--gold-soft);border:1px solid rgba(242,201,76,.25);
+}
+.entry h3{font-size:16px;font-weight:700}
+.entry p{font-size:14px;color:var(--muted);flex:1}
+.entry .go{font-size:13px;color:var(--gold);font-weight:700}
+
+/* Split content */
+.split{display:grid;grid-template-columns:1.4fr .9fr;gap:34px;align-items:start}
+.prose p{color:#c6d0da;font-size:15px;margin-bottom:14px}
+.prose strong{color:var(--text)}
+.note{
+  border-left:3px solid var(--gold);background:var(--gold-soft);
+  padding:14px 18px;border-radius:0 10px 10px 0;font-size:14px;color:#d7dee6;
+}
+.side-card{
+  border:1px solid var(--line);border-radius:var(--radius);
+  background:var(--bg-soft);padding:22px;
+}
+.side-card h3{font-size:15px;margin-bottom:14px;color:var(--gold);letter-spacing:1px}
+.side-card ul{list-style:none;display:grid;gap:11px}
+.side-card li{font-size:14px;color:var(--muted);display:flex;gap:9px}
+.side-card li::before{content:"›";color:var(--gold);font-weight:800}
+
+/* Filter */
+.filter-bar{
+  display:flex;gap:10px;flex-wrap:wrap;align-items:center;
+  margin-bottom:22px;padding:14px;border:1px solid var(--line);border-radius:12px;background:var(--bg-soft);
+}
+.filter-bar label{font-size:13px;color:var(--muted);margin-right:2px}
+.chip{
+  border:1px solid var(--line);background:transparent;color:var(--muted);
+  padding:6px 14px;border-radius:999px;font-size:13px;cursor:pointer;font-family:inherit;
+  transition:.18s;
+}
+.chip:hover{color:var(--text);border-color:#3a4652}
+.chip.active{background:var(--gold);color:#151200;border-color:var(--gold);font-weight:700}
+#search{
+  flex:1;min-width:180px;
+  background:var(--bg);border:1px solid var(--line);border-radius:9px;
+  color:var(--text);padding:9px 14px;font-size:14px;font-family:inherit;
+}
+#search:focus{outline:none;border-color:var(--gold)}
+#search::placeholder{color:#5d6b78}
+
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{
+  border:1px solid var(--line);border-radius:var(--radius);background:var(--card);
+  padding:20px;display:flex;flex-direction:column;gap:9px;
+}
+.card .tag{
+  align-self:flex-start;font-size:12px;padding:2px 10px;border-radius:999px;
+  background:var(--gold-soft);color:var(--gold);border:1px solid rgba(242,201,76,.28);
+}
+.card h4{font-size:15px;font-weight:700}
+.card p{font-size:13.5px;color:var(--muted);flex:1}
+.card .meta{font-size:12.5px;color:#6f7d8a;border-top:1px dashed var(--line);padding-top:9px}
+.empty{grid-column:1/-1;text-align:center;color:var(--muted);font-size:14px;padding:34px 0}
+
+/* Steps */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;counter-reset:s}
+.step{
+  border:1px solid var(--line);border-radius:var(--radius);background:var(--bg-soft);
+  padding:20px;position:relative;
+}
+.step::before{
+  counter-increment:s;content:"0" counter(s);
+  font-size:13px;font-weight:800;color:var(--gold);letter-spacing:2px;
+}
+.step h4{font-size:15px;margin:8px 0 6px}
+.step p{font-size:13.5px;color:var(--muted)}
+
+/* FAQ */
+.faq{display:grid;gap:12px}
+details{
+  border:1px solid var(--line);border-radius:12px;background:var(--card);
+  padding:16px 20px;
+}
+details[open]{border-color:rgba(242,201,76,.4)}
+summary{
+  cursor:pointer;font-weight:700;font-size:15px;list-style:none;
+  display:flex;justify-content:space-between;gap:14px;align-items:center;
+}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--gold);font-size:18px;font-weight:800}
+details[open] summary::after{content:"–"}
+details p{color:var(--muted);font-size:14px;margin-top:11px}
+
+/* Footer */
+footer{border-top:1px solid var(--line);background:var(--bg-soft);padding:40px 0 28px}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:30px;margin-bottom:28px}
+.foot-brand{display:flex;align-items:center;gap:10px;font-weight:800;margin-bottom:12px}
+.foot-brand span{color:var(--gold)}
+footer p{font-size:13.5px;color:var(--muted);max-width:34em}
+footer h5{font-size:13px;color:var(--text);letter-spacing:1px;margin-bottom:12px}
+footer ul{list-style:none;display:grid;gap:8px}
+footer li a{font-size:13.5px;color:var(--muted);transition:.18s}
+footer li a:hover{color:var(--gold)}
+.copy{
+  border-top:1px solid var(--line);padding-top:18px;
+  font-size:12.5px;color:#6f7d8a;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+}
+
+@media(max-width:900px){
+  .hero-grid{grid-template-columns:1fr;gap:30px}
+  .hero{padding:44px 0 40px}
+  .entry-grid,.cards{grid-template-columns:repeat(2,1fr)}
+  .split{grid-template-columns:1fr;gap:26px}
+  .steps{grid-template-columns:repeat(2,1fr)}
+  .foot-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:600px){
+  .nav-inner{padding:12px 0}
+  nav ul{gap:4px}
+  nav a{padding:6px 10px;font-size:13px}
+  .entry-grid,.cards,.steps,.foot-grid{grid-template-columns:1fr}
+  section{padding:42px 0}
+  .hero-stats{gap:18px}
+  .btn{width:100%;justify-content:center}
+  .cta-row{width:100%}
+  .filter-bar{padding:12px}
+  #search{flex:1 1 100%}
+}
+@media(prefers-reduced-motion:reduce){
+  *{transition:none!important;scroll-behavior:auto!important}
+}
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+<a class="skip" href="#main">跳到主要内容</a>
+
+<header>
+  <div class="wrap nav-inner">
+    <a class="logo" href="#top" aria-label="每日大赛黑料入口 首页">
+      <svg width="30" height="30" viewBox="0 0 64 64" aria-hidden="true">
+        <rect width="64" height="64" rx="14" fill="#1a222c" stroke="#2a3440"/>
+        <path d="M16 22h32M16 32h20M16 42h26" stroke="#f2c94c" stroke-width="5" stroke-linecap="round"/>
+      </svg>
+      <span>每日大赛黑料入口</span>
+    </a>
+    <nav aria-label="主导航">
+      <ul>
+        <li><a href="#entry">入口导航</a></li>
+        <li><a href="#about">板块说明</a></li>
+        <li><a href="#index">赛果索引</a></li>
+        <li><a href="#howto">使用方式</a></li>
+        <li><a href="#faq">常见问题</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero" id="top">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="kicker">每日大赛 · 内容入口</span>
+        <h1>每日大赛黑料入口</h1>
+        <p class="lead">这里是「每日大赛黑料入口」的主题首页。页面把入口导航、板块说明、往期赛果索引和使用方式集中在一处，访问者可以按栏目定位想看的内容，而不必在多个页面之间反复跳转。所有栏目名称与说明都围绕每日大赛黑料入口这一主题组织。</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#entry">进入入口导航
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a class="btn btn-ghost" href="#index">查看赛果索引</a>
+          <a class="btn btn-ghost" href="#" download data-download-placeholder="true" aria-disabled="true" tabindex="-1">下载</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat"><b>4</b><span>入口栏目</span></div>
+          <div class="stat"><b>6</b><span>索引分类</span></div>
+          <div class="stat"><b>1</b><span>页面完成导航</span></div>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="art-row"><span>入口状态概览</span><span class="live"><i></i>栏目可用</span></div>
+        <div class="bar"><i style="width:86%"></i></div>
+        <div class="bar"><i style="width:64%"></i></div>
+        <div class="bar"><i style="width:73%"></i></div>
+        <ul class="art-list">
+          <li><b>本期入口</b><span>已整理</span></li>
+          <li><b>往期赛果</b><span>按分类归档</span></li>
+          <li><b>内容说明</b><span>见板块说明</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="entry">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2><span class="num">01</span>每日大赛黑料入口导航</h2>
+        <p>把每日大赛黑料入口拆成四个常用方向：本期入口、往期归档、赛果索引与使用说明。每个方向对应下方的一个卡片，点击即可跳转到本页对应区域。</p>
+      </div>
+      <div class="entry-grid">
+        <a class="entry" href="#index">
+          <span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 6h16M4 12h10M4 18h13" stroke="#f2c94c" stroke-width="2.2" stroke-linecap="round"/></svg></span>
+          <h3>本期入口</h3>
+          <p>面向当期内容的入口说明，指向赛果索引中标注为「本期」的分类，方便先看最近一期。</p>
+          <span class="go">前往赛果索引 →</span>
+        </a>
+        <a class="entry" href="#index">
+          <span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 7v5l3 2" stroke="#f2c94c" stroke-width="2.2" stroke-linecap="round"/><circle cx="12" cy="12" r="8.5" stroke="#f2c94c" stroke-width="2"/></svg></span>
+          <h3>往期归档</h3>
+          <p>按时间顺序整理的往期内容分类，用于回看此前各期的主题与记录。</p>
+          <span class="go">前往赛果索引 →</span>
+        </a>
+        <a class="entry" href="#about">
+          <span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 5h6v6H5zM13 5h6v6h-6zM5 13h6v6H5zM13 13h6v6h-6z" stroke="#f2c94c" stroke-width="2"/></svg></span>
+          <h3>板块说明</h3>
+          <p>说明每日大赛黑料入口各栏目分别放什么、不放什么，帮助判断内容归属。</p>
+          <span class="go">查看板块说明 →</span>
+        </a>
+        <a class="entry" href="#howto">
+          <span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 4v10m0 0l-3.5-3.5M12 14l3.5-3.5M5 18h14" stroke="#f2c94c" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <h3>使用方式</h3>
+          <p>四步说明如何从每日大赛黑料入口出发，定位到具体分类并完成阅读。</p>
+          <span class="go">查看使用方式 →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2><span class="num">02</span>每日大赛黑料入口板块说明</h2>
+        <p>入口本身只是一层索引，真正的内容按板块归类。以下说明各板块的职责边界，避免同一内容被重复放置。</p>
+      </div>
+      <div class="split">
+        <div class="prose">
+          <p><strong>每日大赛黑料入口</strong>在本页承担的是「导航页」角色：它不复制各板块的正文，而是把访问者引导到对应的分类位置。因此页面结构以入口卡片、筛选控件和索引列表为主，文字说明只解释栏目用途与阅读顺序。</p>
+          <p>本期板块收录当前一期相关的条目，标注为「本期」，通常更新频率最高；往期板块按时间倒序归档，用于回看。两者在数据结构上一致，区别只在时间标记，所以本页用同一个列表承载，并通过筛选按钮区分。</p>
+          <p>赛果索引板块记录各期的分类与主题名称，便于按关键词检索。索引只保留标题、分类与时间标记，不展开具体内容，这样页面可以保持较短的加载时间，也方便后续替换真实条目。</p>
+          <p>使用说明板块面向第一次访问的读者，回答「从哪里开始」「怎么筛选」「找不到内容时怎么办」三类问题，与常见问题区域形成互补：前者讲步骤，后者讲例外情况。</p>
+          <div class="note">提示：每日大赛黑料入口各板块的条目会随时间更新，本页索引中的分类与时间标记以页面当前展示为准。</div>
+        </div>
+        <aside class="side-card">
+          <h3>阅读顺序建议</h3>
+          <ul>
+            <li>先看本期入口，确认最近一期分类</li>
+            <li>再用筛选按钮切到往期，按需回看</li>
+            <li>遇到同名条目时以时间标记为准</li>
+            <li>找不到内容时使用搜索框输入关键词</li>
+            <li>仍无结果可参考常见问题中的说明</li>
+          </ul>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section id="index">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2><span class="num">03</span>赛果索引与分类筛选</h2>
+        <p>下方列表把每日大赛黑料入口的索引条目按分类整理。点击分类按钮可切换范围，也可以在搜索框中输入关键词进行过滤，结果会即时显示。</p>
+      </div>
+
+      <div class="filter-bar" role="group" aria-label="索引筛选">
+        <label for="search">搜索</label>
+        <input id="search" type="search" placeholder="输入分类或关键词，例如：本期、往期、合集" autocomplete="off">
+        <button class="chip active" type="button" data-filter="all">全部</button>
+        <button class="chip" type="button" data-filter="本期">本期</button>
+        <button class="chip" type="button" data-filter="往期">往期</button>
+        <button class="chip" type="button" data-filter="合集">合集</button>
+        <button class="chip" type="button" data-filter="说明">说明</button>
+      </div>
+
+      <div class="cards" id="indexList">
+        <article class="card" data-cat="本期">
+          <span class="tag">本期</span>
+          <h4>本期入口分类总览</h4>
+          <p>汇总当前一期在每日大赛黑料入口下的分类名称与主题标签，作为阅读起点。</p>
+          <div class="meta">分类：本期 · 状态：已整理</div>
+        </article>
+        <article class="card" data-cat="往期">
+          <span class="tag">往期</span>
+          <h4>往期条目时间归档</h4>
+          <p>按时间倒序排列的往期分类列表，用于对比不同期之间的主题变化。</p>
+          <div class="meta">分类：往期 · 状态：已归档</div>
+        </article>
+        <article class="card" data-cat="合集">
+          <span class="tag">合集</span>
+          <h4>主题合集索引</h4>
+          <p>把分散在不同期的同类主题合并为合集条目，方便集中回看相关内容。</p>
+          <div class="meta">分类：合集 · 状态：持续补充</div>
+        </article>
+        <article class="card" data-cat="本期">
+          <span class="tag">本期</span>
+          <h4>本期赛果对照表</h4>
+          <p>以对照形式列出本期各分类的名称与标记，便于快速核对入口指向。</p>
+          <div class="meta">分类：本期 · 状态：已整理</div>
+        </article>
+        <article class="card" data-cat="说明">
+          <span class="tag">说明</span>
+          <h4>入口使用与命名约定</h4>
+          <p>解释每日大赛黑料入口中分类命名、时间标记与状态标签的写法约定。</p>
+          <div class="meta">分类：说明 · 状态：稳定</div>
+        </article>
+        <article class="card" data-cat="往期">
+          <span class="tag">往期</span>
+          <h4>往期主题关键词表</h4>
+          <p>抽取往期条目的关键词，配合上方搜索框使用，可缩小检索范围。</p>
+          <div class="meta">分类：往期 · 状态：已归档</div>
+        </article>
+      </div>
+      <p class="empty" id="emptyTip" hidden>没有匹配的条目，试试切换分类或更换关键词。</p>
+    </div>
+  </section>
+
+  <section id="howto">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2><span class="num">04</span>从每日大赛黑料入口到具体分类</h2>
+        <p>四步即可完成一次完整的使用流程，适合初次访问的读者按顺序操作。</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <h4>确认入口</h4>
+          <p>从首屏或导航进入入口导航区，确认要看的是本期还是往期。</p>
+        </div>
+        <div class="step">
+          <h4>选择分类</h4>
+          <p>在赛果索引区点击对应分类按钮，列表会只保留该分类下的条目。</p>
+        </div>
+        <div class="step">
+          <h4>关键词过滤</h4>
+          <p>若分类下条目较多，在搜索框输入主题词，结果会进一步缩小。</p>
+        </div>
+        <div class="step">
+          <h4>核对与回看</h4>
+          <p>查看条目的时间标记与状态，确认后再回到入口导航切换到其他分类。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2><span class="num">05</span>关于每日大赛黑料入口的常见问题</h2>
+        <p>以下问题围绕入口本身，不涉及具体条目内容，回答保持与页面实际功能一致。</p>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>每日大赛黑料入口和具体内容页是什么关系？</summary>
+          <p>每日大赛黑料入口是索引层，负责把访问者引导到本期、往期、合集或说明等分类位置；具体内容页承载条目正文。本页只做导航与索引，不复制正文。</p>
+        </details>
+        <details>
+          <summary>为什么筛选后条目变少了？</summary>
+          <p>筛选按钮与搜索框是叠加生效的：先选分类，再输入关键词，两个条件同时满足的条目才会显示。清空搜索框或点击「全部」即可恢复完整列表。</p>
+        </details>
+        <details>
+          <summary>页面上的下载按钮现在能用吗？</summary>
+          <p>下载入口目前为占位状态，按钮已按禁用方式处理，暂不指向实际文件，后续替换为真实地址后即可正常使用。</p>
+        </details>
+        <details>
+          <summary>索引条目的状态标签代表什么？</summary>
+          <p>「已整理」「已归档」表示该分类已完成当前阶段的整理；「持续补充」表示合集类条目仍会随期数增加而扩展；「稳定」表示命名与说明类条目一般不再变动。</p>
+        </details>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">
+          <svg width="24" height="24" viewBox="0 0 64 64" aria-hidden="true">
+            <rect width="64" height="64" rx="14" fill="#1a222c" stroke="#2a3440"/>
+            <path d="M16 22h32M16 32h20M16 42h26" stroke="#f2c94c" stroke-width="5" stroke-linecap="round"/>
+          </svg>
+          <span>每日大赛黑料入口</span>
+        </div>
+        <p>每日大赛黑料入口主题首页，集中呈现入口导航、板块说明、赛果索引与使用方式，帮助访问者按栏目快速定位内容。</p>
+      </div>
+      <div>
+        <h5>页面栏目</h5>
+        <ul>
+          <li><a href="#entry">入口导航</a></li>
+          <li><a href="#about">板块说明</a></li>
+          <li><a href="#index">赛果索引</a></li>
+          <li><a href="#howto">使用方式</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>索引分类</h5>
+        <ul>
+          <li><a href="#index">本期</a></li>
+          <li><a href="#index">往期</a></li>
+          <li><a href="#index">合集</a></li>
+          <li><a href="#faq">常见问题</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="copy">
+      <span>每日大赛黑料入口 · 主题首页</span>
+      <span>内容与分类以页面当前展示为准</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var chips = document.querySelectorAll('.chip');
+  var cards = document.querySelectorAll('#indexList .card');
+  var input = document.getElementById('search');
+  var empty = document.getElementById('emptyTip');
+  var current = 'all';
+
+  function apply(){
+    var kw = (input.value || '').trim().toLowerCase();
+    var shown = 0;
+    cards.forEach(function(c){
+      var cat = c.getAttribute('data-cat') || '';
+      var text = c.textContent.toLowerCase();
+      var okCat = (current === 'all') || (cat === current);
+      var okKw = !kw || text.indexOf(kw) > -1;
+      var show = okCat && okKw;
+      c.style.display = show ? '' : 'none';
+      if(show) shown++;
+    });
+    empty.hidden = shown !== 0;
+  }
+
+  chips.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      chips.forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      current = btn.getAttribute('data-filter');
+      apply();
+    });
+  });
+
+  input.addEventListener('input', apply);
+  apply();
+})();
+</script>
+</body>
+</html>
