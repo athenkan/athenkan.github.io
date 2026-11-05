@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>58动漫网-58动漫网在线动漫观看_动漫新番_番剧追番入口</title>
+<meta name="description" content="58动漫网是一个关于动漫观看与番剧追番的站点首页，聚合新番导视、分类浏览、追番清单与观看入口说明，帮助访问者快速找到想看的动漫内容。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23172233'/%3E%3Ccircle cx='32' cy='32' r='16' fill='none' stroke='%23ffb454' stroke-width='4'/%3E%3Ccircle cx='26' cy='30' r='3' fill='%23ffb454'/%3E%3Ccircle cx='38' cy='30' r='3' fill='%23ffb454'/%3E%3Cpath d='M24 40q8 6 16 0' fill='none' stroke='%23ffb454' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
+<style>
+:root{
+  --ink:#172233;
+  --ink-soft:#46556b;
+  --line:#e3e8ef;
+  --bg:#f6f8fb;
+  --card:#ffffff;
+  --accent:#ff7a3d;
+  --accent-2:#ffb454;
+  --teal:#2f9e8f;
+  --radius:16px;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Source Han Sans SC",system-ui,-apple-system,sans-serif;
+  color:var(--ink);
+  background:var(--bg);
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none;}
+img,svg{max-width:100%;display:block;}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px;}
+
+/* header */
+header.site{
+  position:sticky;top:0;z-index:50;
+  background:rgba(255,255,255,.92);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.hd{display:flex;align-items:center;gap:28px;height:68px;}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:19px;letter-spacing:.5px;white-space:nowrap;}
+.logo .mark{width:34px;height:34px;flex:none;}
+nav.main{display:flex;gap:22px;font-size:15px;color:var(--ink-soft);}
+nav.main a{padding:4px 0;border-bottom:2px solid transparent;transition:.2s;}
+nav.main a:hover{color:var(--ink);border-bottom-color:var(--accent);}
+.hd-cta{margin-left:auto;display:flex;align-items:center;gap:12px;}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:9px 20px;border-radius:999px;font-size:15px;font-weight:600;
+  background:var(--ink);color:#fff;transition:.2s;border:1px solid var(--ink);
+}
+.btn:hover{background:#0d1826;}
+.btn.ghost{background:transparent;color:var(--ink);border-color:var(--line);}
+.btn.ghost:hover{border-color:var(--accent);color:var(--accent);}
+.btn[aria-disabled="true"]{opacity:.9;cursor:default;}
+
+/* hero */
+.hero{
+  position:relative;overflow:hidden;
+  background:linear-gradient(160deg,#172233 0%,#22344d 55%,#2b3f5c 100%);
+  color:#fff;
+}
+.hero::after{
+  content:"";position:absolute;right:-80px;top:-80px;width:420px;height:420px;border-radius:50%;
+  background:radial-gradient(circle,rgba(255,122,61,.35),transparent 65%);
+}
+.hero-inner{display:grid;grid-template-columns:1.25fr .75fr;gap:40px;align-items:center;padding:64px 0 72px;position:relative;z-index:1;}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:13px;letter-spacing:1px;color:var(--accent-2);border:1px solid rgba(255,180,84,.4);padding:5px 14px;border-radius:999px;margin-bottom:20px;}
+h1{font-size:44px;line-height:1.25;margin:0 0 18px;font-weight:800;letter-spacing:1px;}
+.hero p.lead{color:#c8d3e0;font-size:17px;max-width:560px;margin:0 0 30px;}
+.hero-actions{display:flex;flex-wrap:wrap;gap:14px;}
+.hero .btn.primary{background:var(--accent);border-color:var(--accent);}
+.hero .btn.primary:hover{background:#f2662a;}
+.hero .btn.line{background:transparent;border-color:rgba(255,255,255,.35);color:#fff;}
+.hero .btn.line:hover{border-color:#fff;}
+.hero-figure{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:22px;padding:22px;}
+.hero-figure h2{font-size:14px;font-weight:600;margin:0 0 16px;color:#c8d3e0;letter-spacing:1px;}
+.stat-list{list-style:none;margin:0;padding:0;display:grid;gap:14px;}
+.stat-list li{display:flex;justify-content:space-between;font-size:14px;color:#dbe4ee;padding-bottom:12px;border-bottom:1px dashed rgba(255,255,255,.16);}
+.stat-list li:last-child{border-bottom:0;padding-bottom:0;}
+.stat-list b{color:var(--accent-2);font-weight:700;}
+
+/* sections */
+section{padding:64px 0;}
+section.alt{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+.sec-head{margin-bottom:34px;max-width:720px;}
+.sec-head .kicker{font-size:13px;font-weight:700;letter-spacing:2px;color:var(--accent);text-transform:uppercase;}
+.sec-head h2{font-size:28px;margin:8px 0 12px;font-weight:800;letter-spacing:.5px;}
+.sec-head p{margin:0;color:var(--ink-soft);font-size:15.5px;}
+
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+.card{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:26px 24px;transition:.22s;display:flex;flex-direction:column;
+}
+.card:hover{transform:translateY(-3px);box-shadow:0 14px 28px rgba(23,34,51,.08);border-color:#d5dde8;}
+.card .ico{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:#fff3ea;margin-bottom:16px;}
+.card h3{font-size:18px;margin:0 0 10px;font-weight:700;}
+.card p{margin:0;color:var(--ink-soft);font-size:14.5px;}
+.card .more{margin-top:auto;padding-top:16px;font-size:14px;font-weight:600;color:var(--accent);}
+
+/* list rows */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:22px;}
+.row-card{
+  display:flex;gap:16px;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:20px;
+}
+.row-card .thumb{flex:none;width:72px;height:72px;border-radius:14px;overflow:hidden;background:#eef2f7;display:grid;place-items:center;}
+.row-card h3{margin:0 0 6px;font-size:16.5px;font-weight:700;}
+.row-card p{margin:0;font-size:14px;color:var(--ink-soft);}
+
+/* filter */
+.filter-bar{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:26px;align-items:center;}
+.filter-bar .label{font-size:14px;color:var(--ink-soft);margin-right:4px;}
+.chip{
+  border:1px solid var(--line);background:#fff;color:var(--ink-soft);
+  padding:7px 16px;border-radius:999px;font-size:14px;cursor:pointer;transition:.2s;font-family:inherit;
+}
+.chip:hover{border-color:var(--accent);color:var(--accent);}
+.chip.active{background:var(--ink);border-color:var(--ink);color:#fff;}
+.anime-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;}
+.anime-item{
+  background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px;
+  display:flex;flex-direction:column;gap:8px;min-height:150px;
+}
+.anime-item .tag{font-size:12px;color:var(--teal);font-weight:700;letter-spacing:1px;}
+.anime-item h3{margin:0;font-size:16px;font-weight:700;}
+.anime-item p{margin:0;font-size:13.5px;color:var(--ink-soft);}
+.anime-item .meta{margin-top:auto;font-size:12.5px;color:#8b98a9;}
+.empty-note{display:none;padding:26px;border:1px dashed var(--line);border-radius:14px;color:var(--ink-soft);font-size:14.5px;background:#fff;}
+
+/* qa */
+.qa{display:grid;gap:14px;}
+.qa details{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 22px;}
+.qa summary{font-weight:700;font-size:16px;cursor:pointer;list-style:none;}
+.qa summary::-webkit-details-marker{display:none;}
+.qa summary::before{content:"＋";color:var(--accent);margin-right:10px;font-weight:800;}
+.qa details[open] summary::before{content:"－";}
+.qa p{margin:12px 0 0;font-size:14.5px;color:var(--ink-soft);}
+
+/* footer */
+footer.site{background:#172233;color:#aab7c6;padding:52px 0 30px;}
+.ft-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:36px;padding-bottom:30px;border-bottom:1px solid rgba(255,255,255,.12);}
+.ft-grid .logo{color:#fff;margin-bottom:14px;}
+.ft-grid p{font-size:14px;margin:0;line-height:1.8;max-width:340px;}
+.ft-col h4{color:#fff;font-size:15px;margin:0 0 14px;letter-spacing:.5px;}
+.ft-col ul{list-style:none;margin:0;padding:0;display:grid;gap:9px;font-size:14px;}
+.ft-col a:hover{color:var(--accent-2);}
+.ft-bottom{padding-top:22px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;font-size:13px;color:#7f8d9e;}
+
+@media (max-width:960px){
+  .hero-inner{grid-template-columns:1fr;padding:48px 0 56px;}
+  h1{font-size:34px;}
+  .grid-3{grid-template-columns:1fr 1fr;}
+  .anime-grid{grid-template-columns:repeat(2,1fr);}
+  .split{grid-template-columns:1fr;}
+  .ft-grid{grid-template-columns:1fr 1fr;}
+  nav.main{display:none;}
+}
+@media (max-width:620px){
+  .hd{height:60px;gap:12px;}
+  .logo{font-size:17px;}
+  .logo .mark{width:28px;height:28px;}
+  h1{font-size:28px;}
+  .hero p.lead{font-size:15.5px;}
+  section{padding:44px 0;}
+  .sec-head h2{font-size:23px;}
+  .grid-3{grid-template-columns:1fr;}
+  .anime-grid{grid-template-columns:1fr;}
+  .ft-grid{grid-template-columns:1fr;gap:26px;}
+  .btn{padding:8px 16px;font-size:14px;}
+  .hd-cta .btn.ghost{display:none;}
+}
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap hd">
+    <a class="logo" href="#top" aria-label="58动漫网 首页">
+      <svg class="mark" viewBox="0 0 64 64" aria-hidden="true">
+        <rect width="64" height="64" rx="14" fill="#172233"/>
+        <circle cx="32" cy="32" r="16" fill="none" stroke="#ffb454" stroke-width="4"/>
+        <circle cx="26" cy="30" r="3" fill="#ffb454"/>
+        <circle cx="38" cy="30" r="3" fill="#ffb454"/>
+        <path d="M24 40q8 6 16 0" fill="none" stroke="#ffb454" stroke-width="3" stroke-linecap="round"/>
+      </svg>
+      <span>58动漫网</span>
+    </a>
+    <nav class="main" aria-label="主导航">
+      <a href="#guide">新番导视</a>
+      <a href="#catalog">动漫目录</a>
+      <a href="#follow">追番指南</a>
+      <a href="#faq">常见问题</a>
+    </nav>
+    <div class="hd-cta">
+      <a class="btn ghost" href="#catalog">浏览目录</a>
+      <a class="btn primary" href="#guide">开始追番</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-inner">
+      <div>
+        <span class="eyebrow">动漫观看 · 番剧追番 · 分类导览</span>
+        <h1>58动漫网</h1>
+        <p class="lead">58动漫网是一个围绕动漫观看与番剧追番整理的站点首页。这里把新番导视、动漫目录、追番清单和观看入口说明放在同一页，帮助你在浏览时先看清类型与进度，再决定从哪里开始看。</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#guide">进入新番导视</a>
+          <a class="btn line" href="#catalog">按类型找动漫</a>
+        </div>
+      </div>
+      <aside class="hero-figure" aria-label="页面内容概览">
+        <h2>本页可以做什么</h2>
+        <ul class="stat-list">
+          <li><span>新番与番剧导视</span><b>按季度</b></li>
+          <li><span>动漫目录分类</span><b>多标签</b></li>
+          <li><span>追番清单整理</span><b>可自查</b></li>
+          <li><span>观看入口说明</span><b>清晰</b></li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <!-- 新番导视 -->
+  <section id="guide">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker">Guide</span>
+        <h2>新番导视：先看季度，再挑作品</h2>
+        <p>58动漫网的浏览路径通常从季度开始。先确认当季新番的整体类型分布，再按自己的观看习惯挑选，比在长列表里来回翻找更省时间。</p>
+      </div>
+      <div class="grid-3">
+        <article class="card">
+          <div class="ico" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ff7a3d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M8 4v16M16 4v16M3 12h18"/></svg>
+          </div>
+          <h3>季度新番列表</h3>
+          <p>按播出季度整理当季作品，标注题材与集数区间，方便判断是否适合连续追看。列表只做导览，不替代具体作品的官方信息。</p>
+          <a class="more" href="#catalog">查看分类目录 →</a>
+        </article>
+        <article class="card">
+          <div class="ico" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ff7a3d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V6a2 2 0 0 1 2-2h9l5 5v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z"/><path d="M14 4v6h6"/></svg>
+          </div>
+          <h3>题材与风格筛选</h3>
+          <p>热血、日常、奇幻、运动等标签可以组合使用。先锁定题材，再比较同一题材下的作品差异，选择会更接近自己的口味。</p>
+          <a class="more" href="#catalog">去筛选标签 →</a>
+        </article>
+        <article class="card">
+          <div class="ico" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ff7a3d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          </div>
+          <h3>更新时间留意</h3>
+          <p>连载作品的更新节奏并不统一。58动漫网在导视区提示常见更新周期，帮助你安排每周的观看顺序，避免漏看关键集数。</p>
+          <a class="more" href="#follow">了解追番方法 →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 动漫目录 -->
+  <section id="catalog" class="alt">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker">Catalog</span>
+        <h2>动漫目录：按类型快速定位</h2>
+        <p>下面的目录示例展示 58动漫网 常见的分类方式。点击标签可以筛选当前列表，筛选逻辑在页面内直接运行，不需要跳转。</p>
+      </div>
+
+      <div class="filter-bar" role="group" aria-label="按类型筛选动漫">
+        <span class="label">类型：</span>
+        <button class="chip active" data-filter="all" type="button">全部</button>
+        <button class="chip" data-filter="热血" type="button">热血</button>
+        <button class="chip" data-filter="日常" type="button">日常</button>
+        <button class="chip" data-filter="奇幻" type="button">奇幻</button>
+        <button class="chip" data-filter="运动" type="button">运动</button>
+      </div>
+
+      <div class="anime-grid" id="animeGrid">
+        <article class="anime-item" data-tag="热血">
+          <span class="tag">热血</span>
+          <h3>少年成长线</h3>
+          <p>以训练与对抗推进剧情，适合喜欢节奏明快叙事的观众。</p>
+          <span class="meta">连载 · 每周更新</span>
+        </article>
+        <article class="anime-item" data-tag="日常">
+          <span class="tag">日常</span>
+          <h3>校园生活小品</h3>
+          <p>单元式结构，单集独立，适合碎片时间观看。</p>
+          <span class="meta">已完结 · 12 集</span>
+        </article>
+        <article class="anime-item" data-tag="奇幻">
+          <span class="tag">奇幻</span>
+          <h3>异世界旅程</h3>
+          <p>世界观设定较重，建议按顺序观看以免错过伏笔。</p>
+          <span class="meta">连载 · 每周更新</span>
+        </article>
+        <article class="anime-item" data-tag="运动">
+          <span class="tag">运动</span>
+          <h3>竞技成长记</h3>
+          <p>比赛段落集中，适合连续观看，前后集关联紧密。</p>
+          <span class="meta">连载 · 双周更新</span>
+        </article>
+      </div>
+      <p class="empty-note" id="emptyNote">当前类型下暂无示例条目，可切换其他标签继续浏览。</p>
+    </div>
+  </section>
+
+  <!-- 追番指南 -->
+  <section id="follow">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker">Follow</span>
+        <h2>追番指南：把清单和进度管起来</h2>
+        <p>追番的关键不是看得多，而是记得看到哪里。58动漫网建议用三步整理自己的观看顺序，减少重复查找。</p>
+      </div>
+      <div class="split">
+        <div class="row-card">
+          <div class="thumb" aria-hidden="true">
+            <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#2f9e8f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3 7-7"/><path d="M20 12v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h9"/></svg>
+          </div>
+          <div>
+            <h3>第一步：建立追番清单</h3>
+            <p>把当季打算看的作品先列出来，标注更新周期。清单不必很长，控制在每周能看完的范围内更容易坚持。</p>
+          </div>
+        </div>
+        <div class="row-card">
+          <div class="thumb" aria-hidden="true">
+            <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#2f9e8f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l2.5 2.5"/></svg>
+          </div>
+          <div>
+            <h3>第二步：记录观看进度</h3>
+            <p>每看完一集记下集数，连载作品尤其需要。下次打开 58动漫网 时，从目录直接跳到对应条目，省去反复确认。</p>
+          </div>
+        </div>
+        <div class="row-card">
+          <div class="thumb" aria-hidden="true">
+            <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#2f9e8f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h10"/></svg>
+          </div>
+          <div>
+            <h3>第三步：按类型补充</h3>
+            <p>看完当前清单后，用分类标签补充同题材作品。58动漫网 的目录页把相近类型放在一起，扩展片单更顺手。</p>
+          </div>
+        </div>
+        <div class="row-card">
+          <div class="thumb" aria-hidden="true">
+            <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#2f9e8f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M4 20h16"/></svg>
+          </div>
+          <div>
+            <h3>离线留存与下载说明</h3>
+            <p>页面提供下载入口，当前下载地址尚未启用，按钮保持禁用状态，后续替换为正式地址后即可使用。</p>
+            <a class="btn" href="#" data-download-placeholder="true" aria-disabled="true" tabindex="-1" style="margin-top:12px;pointer-events:none;">下载</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="alt">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker">FAQ</span>
+        <h2>常见问题：关于 58动漫网 的浏览方式</h2>
+        <p>下面整理访问者最常问到的问题，回答只针对本站首页的内容组织方式。</p>
+      </div>
+      <div class="qa">
+        <details open>
+          <summary>58动漫网 是什么类型的站点？</summary>
+          <p>它是一个动漫主题的站点首页，重点在于导视、目录与追番整理，帮助访问者更快找到想看的内容，而不是替代作品官方发布的信息。</p>
+        </details>
+        <details>
+          <summary>页面上的分类筛选怎么用？</summary>
+          <p>在动漫目录区点击类型标签即可筛选当前列表。全部、热血、日常、奇幻、运动之间可以自由切换，筛选在页面内完成，无需刷新。</p>
+        </details>
+        <details>
+          <summary>追番清单需要注册才能使用吗？</summary>
+          <p>本页提供的是追番方法的说明与目录入口，不涉及账号体系。你可以参照三步指南自行记录进度，再回到 58动漫网 的目录中查找条目。</p>
+        </details>
+        <details>
+          <summary>下载按钮为什么暂时不能点？</summary>
+          <p>下载入口目前处于待启用状态，按钮显示为禁用，等正式地址确认后会替换。页面其他浏览与筛选功能不受影响。</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="ft-grid">
+      <div>
+        <div class="logo">
+          <svg class="mark" viewBox="0 0 64 64" aria-hidden="true" style="width:30px;height:30px;">
+            <rect width="64" height="64" rx="14" fill="#ffb454"/>
+            <circle cx="32" cy="32" r="16" fill="none" stroke="#172233" stroke-width="4"/>
+            <circle cx="26" cy="30" r="3" fill="#172233"/>
+            <circle cx="38" cy="30" r="3" fill="#172233"/>
+            <path d="M24 40q8 6 16 0" fill="none" stroke="#172233" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+          <span>58动漫网</span>
+        </div>
+        <p>58动漫网 专注动漫观看与番剧追番的导览整理，把新番导视、分类目录与追番方法放在一处，方便按自己的节奏浏览。</p>
+      </div>
+      <div class="ft-col">
+        <h4>页面栏目</h4>
+        <ul>
+          <li><a href="#guide">新番导视</a></li>
+          <li><a href="#catalog">动漫目录</a></li>
+          <li><a href="#follow">追番指南</a></li>
+          <li><a href="#faq">常见问题</a></li>
+        </ul>
+      </div>
+      <div class="ft-col">
+        <h4>使用提示</h4>
+        <ul>
+          <li><a href="#catalog">按类型筛选</a></li>
+          <li><a href="#follow">记录观看进度</a></li>
+          <li><a href="#top">返回顶部</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ft-bottom">
+      <span>58动漫网 · 动漫观看与追番导览首页</span>
+      <span>内容以导视与目录说明为主，具体作品信息以官方发布为准。</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var chips = document.querySelectorAll('.chip');
+  var items = document.querySelectorAll('.anime-item');
+  var empty = document.getElementById('emptyNote');
+  chips.forEach(function(chip){
+    chip.addEventListener('click', function(){
+      chips.forEach(function(c){ c.classList.remove('active'); });
+      chip.classList.add('active');
+      var f = chip.getAttribute('data-filter');
+      var shown = 0;
+      items.forEach(function(it){
+        var ok = (f === 'all') || (it.getAttribute('data-tag') === f);
+        it.style.display = ok ? 'flex' : 'none';
+        if(ok) shown++;
+      });
+      empty.style.display = shown ? 'none' : 'block';
+    });
+  });
+})();
+</script>
+</body>
+</html>
